@@ -1,39 +1,40 @@
-// Contador de Poder Anime
+// Sistema de contador mejorado
 let count = localStorage.getItem('animePowerCount') || 0;
 const button = document.getElementById("animePower");
 const countDisplay = document.getElementById("clickCount");
 countDisplay.textContent = count;
 
-button.addEventListener("click", () => {
+// Efectos de partículas al hacer clic
+button.addEventListener("click", (e) => {
     count++;
     countDisplay.textContent = count;
     localStorage.setItem('animePowerCount', count);
     
-    // Efecto de partículas
-    for (let i = 0; i < 10; i++) {
+    // Crear partículas
+    for(let i = 0; i < 12; i++) {
         const particle = document.createElement('div');
         particle.style.cssText = `
             position: fixed;
-            width: 6px;
-            height: 6px;
-            background: rgba(255, 0, 0, 0.8);
+            width: ${Math.random() * 6 + 4}px;
+            height: ${Math.random() * 6 + 4}px;
+            background: hsl(${Math.random() * 360}, 100%, 50%);
             border-radius: 50%;
-            left: ${event.clientX + Math.random() * 20 - 10}px;
-            top: ${event.clientY + Math.random() * 20 - 10}px;
+            left: ${e.clientX + (Math.random() - 0.5) * 50}px;
+            top: ${e.clientY + (Math.random() - 0.5) * 50}px;
             pointer-events: none;
-            animation: explode 0.8s ease-out;
+            animation: explode ${0.5 + Math.random() * 0.5}s ease-out;
         `;
         document.body.appendChild(particle);
-        setTimeout(() => particle.remove(), 800);
+        setTimeout(() => particle.remove(), 1000);
     }
 });
 
-// Animación de partículas
+// Animaciones CSS dinámicas
 const style = document.createElement('style');
 style.textContent = `
     @keyframes explode {
         0% { transform: scale(1); opacity: 1; }
-        100% { transform: scale(3); opacity: 0; }
+        100% { transform: scale(2); opacity: 0; }
     }
 `;
 document.head.appendChild(style);
