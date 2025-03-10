@@ -1,13 +1,17 @@
+/* Estilos generales */
 body {
     background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     overflow-x: hidden;
+    margin: 0;
 }
 
 h1 {
     font-size: 3rem;
+    color: white;
+    padding: 20px 0;
 }
 
 /* Videos más grandes */
@@ -16,9 +20,10 @@ h1 {
     height: auto;
     margin: 15px;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px white;
+    box-shadow: 0 0 15px white;
 }
 
+/* Botón */
 button {
     background-color: red;
     color: white;
@@ -26,6 +31,7 @@ button {
     padding: 15px 30px;
     border: none;
     cursor: pointer;
+    margin: 20px 0;
 }
 
 /* Links */
@@ -52,16 +58,10 @@ button {
     color: white;
 }
 
-.youtube {
-    background-color: red;
-    color: white;
-}
-
-/* Imágenes flotantes más grandes */
+/* Imágenes flotantes */
 .floating-image {
     position: fixed;
     width: 180px;
-    animation: float 3s ease-in-out infinite;
 }
 
 .right {
@@ -69,30 +69,85 @@ button {
     right: 20px;
 }
 
-.middle-left {
-    top: 40%;
+.bottom-left {
+    bottom: 20px;
     left: 20px;
 }
 
 /* Speech Bubble */
 .speech-bubble {
     position: fixed;
-    bottom: 50px;
-    right: 20px;
+    top: 20px;
+    left: 50px;
     background-color: white;
     color: black;
     padding: 15px;
     border-radius: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    transform: translateY(-100%);
+    animation: floatBubble 3s infinite;
 }
 
-.speech-bubble img {
-    width: 70px;
-    margin-right: 10px;
+.speech-bubble p {
+    margin: 0;
+    font-size: 1.5rem;
 }
 
-/* GIFs de fondo fijos y distribuidos */
+/* Imagen dentro del Speech Bubble */
+.speech-image {
+    width: 120px;
+    margin-top: 80px;
+    margin-left: -50px;
+    transform: translateY(50px);
+    animation: imageFloat 5s infinite;
+}
+
+/* Animaciones */
+@keyframes floatBubble {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes imageFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Twitter widget (ventana) */
+.twitter-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 320px;
+    height: 400px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    padding: 20px;
+}
+
+.twitter-widget iframe {
+    border-radius: 10px;
+}
+
+/* Estilo para fondo de GIFs */
 .background-gifs {
     position: fixed;
     top: 0;
@@ -114,21 +169,4 @@ button {
     height: auto;
     opacity: 0.7;
     object-fit: cover;
-}
-
-/* Animación de flotar */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* GIF flotante en la esquina inferior izquierda */
-.floating-gif {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 100px; /* Ajusta el tamaño del GIF según lo necesites */
-    height: auto;
-    z-index: 10;
 }
