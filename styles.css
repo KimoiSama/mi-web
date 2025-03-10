@@ -81,8 +81,8 @@ button {
 
 /* Speech Bubble */
 .speech-bubble {
-    position: fixed;
-    top: 40px;
+    position: absolute;
+    top: 20px;
     left: 50px;
     background-color: white;
     color: black;
@@ -101,7 +101,6 @@ button {
 /* Imagen dentro del Speech Bubble */
 .speech-image {
     width: 120px;
-    margin-top: 10px;
     margin-left: -50px;
     transform: translateY(0);
     animation: imageFloat 5s infinite;
@@ -133,12 +132,12 @@ button {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     padding: 20px;
     overflow: hidden;
+    animation: tweetSlide 5s infinite;
 }
 
 .tweet-slider {
     display: flex;
     flex-direction: column;
-    animation: slideTweets 10s infinite;
 }
 
 .tweet {
@@ -149,23 +148,25 @@ button {
     border-radius: 8px;
     font-size: 1rem;
     opacity: 0;
+    transition: opacity 1s;
 }
 
-@keyframes slideTweets {
+@keyframes tweetSlide {
     0% {
+        opacity: 1;
         transform: translateY(0);
     }
     20% {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateY(0);
     }
-    30% {
-        transform: translateY(-100%);
+    40% {
         opacity: 0;
+        transform: translateY(-100%);
     }
     100% {
-        transform: translateY(-400%);
-        opacity: 0;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -190,5 +191,4 @@ button {
     width: 180px;
     height: auto;
     opacity: 0.7;
-    object-fit: cover;
-}
+    object-fit:
