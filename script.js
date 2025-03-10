@@ -1,31 +1,55 @@
-let count = 0;
+// Contador de Poder Anime
+let count = localStorage.getItem('animePowerCount') || 0;
 const button = document.getElementById("animePower");
 const countDisplay = document.getElementById("clickCount");
+countDisplay.textContent = count;
 
 button.addEventListener("click", () => {
     count++;
     countDisplay.textContent = count;
-    const gifContainer = document.getElementById('gif-container');
-let gifIndex = 0;
-const gifUrls = [
-    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdwbXd4ZGF1OW50NjhiOGYzNG52Z3UzMTBjejRyNWF0czYwamJjdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/k0zSFlL0vwBVWRK8sT/giphy.gif",
-    "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGQwYm10eTlxcHh5NHc3Y2VqNGtpOWt1c2doeWp1d2FqMGZkMjVsMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SIAQookFwLMBtfV81U/giphy.gif",
-    "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWYxNXBrcWIwd2kwZ2t0bXo2eGpmcGE0aHFhbWY2eG13Ymo0NGtxYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DLso9u2jbnnu17ioK9/giphy.gif"
-];
-
-function changeGifs() {
-    gifContainer.innerHTML = ""; // Limpiar contenedor actual
-
-    let numGifs = gifIndex < 3 ? 1 : 3;
-    for (let i = 0; i < numGifs; i++) {
-        let gif = document.createElement('img');
-        gif.src = gifUrls[i];
-        gif.classList.add('gif');
-        gifContainer.appendChild(gif);
+    localStorage.setItem('animePowerCount', count);
+    
+    // Efecto de partículas
+    for (let i = 0; i < 10; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 0, 0, 0.8);
+            border-radius: 50%;
+            left: ${event.clientX + Math.random() * 20 - 10}px;
+            top: ${event.clientY + Math.random() * 20 - 10}px;
+            pointer-events: none;
+            animation: explode 0.8s ease-out;
+        `;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 800);
     }
+});
 
-    gifIndex = (gifIndex + 1) % 4;
-}
+// Animación de partículas
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes explode {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(3); opacity: 0; }
+    }
+`;
+document.head.appendChild(style);
 
-setInterval(changeGifs, 3000);
-changeGifs();  // Inicializar con 1 GIF
+// Carga el widget de Twitter
+window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+    return t;
+}(document, "script", "twitter-wjs"));
