@@ -102,29 +102,9 @@ button {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     padding: 20px;
     overflow: hidden;
-    animation: tweetSlide 5s infinite;
-}
 
-@keyframes tweetSlide {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    40% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-/* Estilo para fondo de GIFs */
+    /* Estilo para fondo de GIFs */
 .background-gifs {
     position: fixed;
     top: 0;
