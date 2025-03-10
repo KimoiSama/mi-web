@@ -3,83 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rincón de Kimoi | Creador de Contenido</title>
-    <meta name="description" content="Portal oficial de Kimoi - Música, contenido anime y cultura pop japonesa">
+    <title>Rincón de Kimoi</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎌</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Fondo animado -->
+    <!-- Fondo animado con GIFs -->
     <div class="background-gifs">
-        <!-- Tus GIFs originales aquí -->
+        <img src="https://media4.giphy.com/media/J951ATYbqDjhI2n3AR/giphy.gif">
+        <img src="https://media1.giphy.com/media/aoSGvVQ7aESTR9HwTv/giphy.gif">
+        <img src="https://media4.giphy.com/media/ZNdZIp7CbRequTkQzM/giphy.gif">
+        <img src="https://media2.giphy.com/media/uEEaZojGCytEROVTeW/giphy.gif">
+        <img src="https://media0.giphy.com/media/qT9JT0E89ASJKKctuB/giphy.gif">
+        <img src="https://media1.giphy.com/media/fQy60Qu3jiUIF0kHO7/giphy.gif">
+        <img src="https://media2.giphy.com/media/4JPcDbiru2EhZj6S6i/giphy.gif">
+        <img src="https://media3.giphy.com/media/C78DUprr9gbzEjc1XL/giphy.gif">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjdtZGtseWk5NHUxYW02amdubW5oZmpveGQya3JvMzR4Ym8yOXVpMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GJQ2EVz4NUMc562p5G/giphy.gif">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RpeG9pZmszbzNxcGMxcmU3Mm1yemRwNjVyMGR3NHAzcjIydzh2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b2n4FTKtDQXGYJv0pu/giphy.gif">
     </div>
 
-    <!-- GIF decorativo fijo -->
-    <div class="fixed-gif-container">
-        <img src="https://media.giphy.com/media/k0zSFlL0vwBVWRK8sT/giphy.gif" alt="Decoración anime" class="fixed-gif">
-    </div>
+    <!-- GIF fijo central -->
+    <img src="https://media.giphy.com/media/k0zSFlL0vwBVWRK8sT/giphy.gif" class="fixed-gif" alt="Gif decorativo">
 
-    <!-- Cabecera -->
-    <header class="glass-header">
-        <h1 data-text="Rincón de Kimoi">Rincón de Kimoi</h1>
-        <div class="scanline"></div>
+    <header>
+        <h1>Rincón de Kimoi</h1>
     </header>
 
-    <!-- Contenido principal -->
     <main>
-        <section class="video-section">
-            <h2 class="section-title">Últimos Lanzamientos</h2>
-            <div class="video-grid">
-                <a href="https://youtu.be/Jx-STu4gS7M" class="video-card" target="_blank">
-                    <img src="https://img.youtube.com/vi/Jx-STu4gS7M/maxresdefault.jpg" alt="Video 1" loading="lazy">
-                    <div class="video-overlay">
-                        <span class="badge">Nuevo</span>
-                    </div>
-                </a>
-                <!-- Repetir para otros videos incluyendo el nuevo -->
-            </div>
-        </section>
+        <h2>Mis últimos bangers</h2>
+        <div class="video-grid">
+            <a href="https://youtu.be/Jx-STu4gS7M" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/Jx-STu4gS7M/0.jpg" alt="Video 1">
+            </a>
+            <a href="https://youtu.be/h12CdpXsSQI" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/h12CdpXsSQI/0.jpg" alt="Video 2">
+            </a>
+            <a href="https://youtu.be/aJOlLFSdNc4" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/aJOlLFSdNc4/0.jpg" alt="Video 3">
+            </a>
+            <a href="https://youtu.be/CQ33_ZliG60" target="_blank" class="video-item">
+                <img src="https://img.youtube.com/vi/CQ33_ZliG60/0.jpg" alt="Video 4">
+            </a>
+        </div>
 
-        <section class="interaction-section">
-            <div class="power-container">
-                <button id="animePower" class="neon-button">
-                    <span class="neon-text">Poder de Anime</span>
-                    <span id="clickCount" class="counter">0</span>
-                </button>
-                <div class="particle-overlay"></div>
-            </div>
-        </section>
+        <div class="power-container">
+            <button id="animePower">
+                <span class="button-text">Poder de Anime</span>
+                <span id="clickCount">0</span>
+            </button>
+        </div>
 
-        <section class="social-section">
-            <div class="social-grid">
-                <a href="https://youtube.com/@kimoi-df3tp" class="social-card youtube" target="_blank">
-                    <div class="social-icon">▶️</div>
-                    <span>Canal de YouTube</span>
-                </a>
-                <!-- Repetir para otros enlaces sociales -->
-            </div>
-        </section>
+        <div class="social-links">
+            <a href="https://youtube.com/@kimoi-df3tp" target="_blank" class="social-button youtube">
+                <span>YouTube</span>
+            </a>
+            <a href="https://x.com/cobsonp" target="_blank" class="social-button twitter">
+                <span>Twitter/X</span>
+            </a>
+            <a href="https://anilist.co/user/Kimoi14/" target="_blank" class="social-button anilist">
+                <span>AniList</span>
+            </a>
+        </div>
+
+        <!-- Widget de Twitter fijo -->
+        <div class="twitter-widget">
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/cobsonp?ref_src=twsrc%5Etfw">
+                Tweets de @cobsonp
+            </a> 
+        </div>
     </main>
 
-    <!-- Widget de Twitter -->
-    <aside class="twitter-panel">
-        <div class="twitter-header">
-            <div class="twitter-logo">𝕏</div>
-            <h3>Últimos de @cobsonp</h3>
-        </div>
-        <div class="twitter-widget">
-            <a class="twitter-timeline" data-height="500" href="https://twitter.com/cobsonp?ref_src=twsrc%5Etfw"></a>
-        </div>
-    </aside>
+    <!-- Elementos flotantes -->
+    <img class="floating-image right" src="https://i.postimg.cc/qvDBqkfg/55-Nl5bcx-jpg-large.png" alt="Flotante Derecha">
+    <img class="floating-image bottom-left" src="https://i.postimg.cc/3RsFT5rc/55-Nl5bcx-jpg-large-1.png" alt="Flotante Izquierda Inferior">
 
-    <!-- Elementos decorativos -->
-    <div class="decorative-elements">
-        <div class="particle-system"></div>
-        <img src="https://i.postimg.cc/qvDBqkfg/55-Nl5bcx-jpg-large.png" class="deco-image right" alt="Decoración">
-        <img src="https://i.postimg.cc/3RsFT5rc/55-Nl5bcx-jpg-large-1.png" class="deco-image left" alt="Decoración">
-    </div>
-
-    <!-- Scripts -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="script.js"></script>
 </body>
