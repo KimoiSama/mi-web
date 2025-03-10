@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Sección de fondo con los GIFs -->
     <div class="background-gifs">
-        <img src="https://media4.giphy.com/media/J951ATYbqDjhI2n3AR/giphy.gif">
+        <img src="https://media0.giphy.com/media/J951ATYbqDjhI2n3AR/giphy.gif">
         <img src="https://media1.giphy.com/media/aoSGvVQ7aESTR9HwTv/giphy.gif">
         <img src="https://media4.giphy.com/media/ZNdZIp7CbRequTkQzM/giphy.gif">
         <img src="https://media2.giphy.com/media/uEEaZojGCytEROVTeW/giphy.gif">
@@ -16,10 +18,6 @@
         <img src="https://media1.giphy.com/media/fQy60Qu3jiUIF0kHO7/giphy.gif">
         <img src="https://media2.giphy.com/media/4JPcDbiru2EhZj6S6i/giphy.gif">
         <img src="https://media3.giphy.com/media/C78DUprr9gbzEjc1XL/giphy.gif">
-        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjdtZGtseWk5NHUxYW02amdubW5oZmpveGQya3JvMzR4Ym8yOXVpMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GJQ2EVz4NUMc562p5G/giphy.gif">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RpeG9pZmszbzNxcGMxcmU3Mm1yemRwNjVyMGR3NHAzcjIydzh2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b2n4FTKtDQXGYJv0pu/giphy.gif">
-        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGQwYm10eTlxcHh5NHc3Y2VqNGtpOWt1c2doeWp1d2FqMGZkMjVsMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SIAQookFwLMBtfV81U/giphy.gif">
-        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWYxNXBrcWIwd2kwZ2t0bXo2eGpmcGE0aHFhbWY2eG13Ymo0NGtxYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DLso9u2jbnnu17ioK9/giphy.gif">
     </div>
 
     <header>
@@ -45,19 +43,31 @@
         <div class="links">
             <a href="https://x.com/cobsonp" target="_blank" class="twitter">Twitter</a>
             <a href="https://anilist.co/user/Kimoi14/" target="_blank" class="anilist">AniList</a>
-            <a href="https://youtube.com/@kimoi-df3tp" target="_blank" class="youtube">YouTube</a>
         </div>
+
+        <!-- Ventana de los tweets de @cobsonp -->
+        <div class="twitter-widget">
+            <a class="twitter-timeline"
+               href="https://twitter.com/cobsonp"
+               data-tweet-limit="5"
+               data-theme="dark"
+               data-chrome="nofooter noheader">
+               Tweets
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
     </main>
 
+    <!-- Imágenes flotantes -->
     <img class="floating-image right" src="https://i.postimg.cc/qvDBqkfg/55-Nl5bcx-jpg-large.png" alt="Flotante Derecha">
-    <img class="floating-image middle-left" src="https://i.postimg.cc/3RsFT5rc/55-Nl5bcx-jpg-large-1.png" alt="Flotante Izquierda Medio">
+    <img class="floating-image bottom-left" src="https://i.postimg.cc/3RsFT5rc/55-Nl5bcx-jpg-large-1.png" alt="Flotante Izquierda Inferior">
 
+    <!-- Speech bubble de Kimoi -->
     <div class="speech-bubble">
-        <img src="https://i.postimg.cc/cLPgMTnB/Gh-ESI9xbs-AAEq-H7.png" alt="Kimoi">
         <p>Fui preñada por Kimoi</p>
     </div>
-
-    <img class="floating-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGg1bG1yOHhuaDFqcTBoZ3Y1cGZqdnBrNm4yenF6cGJ0d2k5MG4xaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/k0zSFlL0vwBVWRK8sT/giphy.gif" alt="GIF en la esquina inferior izquierda">
+    <img class="speech-image" src="https://i.postimg.cc/cLPgMTnB/Gh-ESI9xbs-AAEq-H7.png" alt="Kimoi">
 
     <script src="script.js"></script>
 </body>
