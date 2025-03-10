@@ -1,0 +1,124 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/* Videos más grandes */
+.videos img {
+    width: 400px;
+    height: auto;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px white;
+}
+
+button {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Links */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    display: block;
+    margin: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.twitter {
+    background-color: cyan;
+    color: black;
+}
+
+.anilist {
+    background-color: purple;
+    color: white;
+}
+
+.youtube {
+    background-color: red;
+    color: white;
+}
+
+/* Imágenes flotantes más grandes */
+.floating-image {
+    position: fixed;
+    width: 180px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.right {
+    top: 20px;
+    right: 20px;
+}
+
+.middle-left {
+    top: 40%;
+    left: 20px;
+}
+
+/* Speech Bubble */
+.speech-bubble {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.speech-bubble img {
+    width: 70px;
+    margin-right: 10px;
+}
+
+/* GIFs de fondo fijos y distribuidos */
+.background-gifs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    pointer-events: none;
+}
+
+.background-gifs img {
+    width: 180px;
+    height: auto;
+    opacity: 0.7;
+    object-fit: cover;
+}
+
+/* Animación de flotar */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
