@@ -79,44 +79,15 @@ button {
     left: 20px;
 }
 
-/* Speech Bubble */
-.speech-bubble {
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    background-color: white;
-    color: black;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.speech-bubble p {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-/* Imagen dentro del Speech Bubble */
-.speech-image {
+/* GIF fijo en la parte superior */
+.fixed-gif {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 120px;
-    margin-left: -50px;
-    transform: translateY(0);
-    animation: imageFloat 5s infinite;
-}
-
-/* Animaciones */
-@keyframes imageFloat {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    height: auto;
+    z-index: 1000;
 }
 
 /* Twitter widget (ventana) */
@@ -192,5 +163,4 @@ button {
     height: auto;
     opacity: 0.7;
     object-fit: cover;
-    border-radius: 10px;
 }
