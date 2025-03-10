@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <div class="background-gifs">
+    <!-- Fondo con GIFs animados -->
+    <div class="background-gifs">
         <img src="https://media4.giphy.com/media/J951ATYbqDjhI2n3AR/giphy.gif">
         <img src="https://media1.giphy.com/media/aoSGvVQ7aESTR9HwTv/giphy.gif">
         <img src="https://media4.giphy.com/media/ZNdZIp7CbRequTkQzM/giphy.gif">
@@ -18,10 +19,12 @@
         <img src="https://media3.giphy.com/media/C78DUprr9gbzEjc1XL/giphy.gif">
         <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjdtZGtseWk5NHUxYW02amdubW5oZmpveGQya3JvMzR4Ym8yOXVpMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GJQ2EVz4NUMc562p5G/giphy.gif">
         <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RpeG9pZmszbzNxcGMxcmU3Mm1yemRwNjVyMGR3NHAzcjIydzh2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b2n4FTKtDQXGYJv0pu/giphy.gif">
- </div>
-    <!-- GIFs fijos en la parte superior izquierda (cambiar de 1 a 3 cada 3 segundos) -->
-    <div id="gif-container" class="gif-container">
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGg1bG1yOHhuaDFqcTBoZ3Y1cGZqdnBrNm4yenF6cGJ0d2k5MG4xaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/k0zSFlL0vwBVWRK8sT/giphy.gif" class="gif" alt="GIF 1">
+    </div>
+
+    <!-- GIFs en la parte superior izquierda -->
+    <div class="gif-container">
+        <img class="gif" src="https://media.giphy.com/media/ejemplo1.gif" alt="GIF 1">
+        <img class="gif" src="https://media.giphy.com/media/ejemplo2.gif" alt="GIF 2">
     </div>
 
     <header>
@@ -50,18 +53,19 @@
             <a href="https://anilist.co/user/Kimoi14/" target="_blank" class="anilist">Mira mi AniList</a>
         </div>
 
-        <!-- Ventana de los tweets de @cobsonp (widget) -->
+        <!-- Ventana de tweets FIJADA y mejorada -->
         <div class="twitter-widget">
-            <a class="twitter-timeline" href="https://twitter.com/cobsonp?ref_src=twsrc%5Etfw">Tweets de @cobsonp</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/cobsonp?ref_src=twsrc%5Etfw">
+                Tweets de @cobsonp
+            </a> 
         </div>
-
     </main>
 
     <!-- Imágenes flotantes -->
     <img class="floating-image right" src="https://i.postimg.cc/qvDBqkfg/55-Nl5bcx-jpg-large.png" alt="Flotante Derecha">
     <img class="floating-image bottom-left" src="https://i.postimg.cc/3RsFT5rc/55-Nl5bcx-jpg-large-1.png" alt="Flotante Izquierda Inferior">
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="script.js"></script>
 </body>
 </html>
