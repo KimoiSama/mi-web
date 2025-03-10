@@ -39,25 +39,21 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Widget de Twitter
+// Control del Widget de Twitter
 const twitterWidget = document.querySelector('.twitter-widget');
-let lastScroll = 0;
+let widgetVisible = false;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    const currentScroll = window.scrollY;
     
-    if (currentScroll > 100 && currentScroll > lastScroll) {
+    if (currentScroll > 200 && !widgetVisible) {
         twitterWidget.classList.add('visible');
-    } else if (currentScroll < 50) {
+        widgetVisible = true;
+    } else if (currentScroll <= 200 && widgetVisible) {
         twitterWidget.classList.remove('visible');
+        widgetVisible = false;
     }
-    lastScroll = currentScroll;
 });
-
-// Inicializar transición después de carga
-setTimeout(() => {
-    twitterWidget.style.transition = 'right 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-}, 1000);
 
 // Inicializar Twitter
 window.twttr = (function(d, s, id) {
