@@ -1,166 +1,54 @@
-/* Estilos generales */
-body {
-    background-color: black;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    margin: 0;
+let count = 0;
+const button = document.getElementById("animePower");
+const countDisplay = document.getElementById("clickCount");
+
+button.addEventListener("click", () => {
+    count++;
+    countDisplay.textContent = count;
+});
+
+// Tweets randomos de la cuenta
+const tweets = [
+    "Tweet random 1 aquí",
+    "Tweet random 2 aquí",
+    "Tweet random 3 aquí",
+    "Tweet random 4 aquí",
+    "Tweet random 5 aquí"
+];
+
+let tweetIndex = 0;
+const tweetElements = document.querySelectorAll(".tweet");
+
+function changeTweet() {
+    tweetElements.forEach((el, index) => {
+        el.textContent = tweets[(tweetIndex + index) % tweets.length];
+    });
+    tweetIndex++;
 }
 
-h1 {
-    font-size: 3rem;
-    color: white;
-    padding: 20px 0;
+setInterval(changeTweet, 5000);
+changeTweet();
+
+
+// Cambio de tweets cada 5 segundos
+const tweets = [
+    "Este es un tweet aleatorio #1",
+    "Otro tweet random #2",
+    "Tweet de prueba para mostrar #3",
+    "Nuevo tweet #4",
+    "Random tweet número 5"
+];
+
+let tweetIndex = 0;
+const tweetElements = document.querySelectorAll(".tweet");
+
+function changeTweet() {
+    tweetElements.forEach((el, index) => {
+        el.textContent = tweets[(tweetIndex + index) % tweets.length];
+        el.style.opacity = 1;  // Hacer visible el tweet
+    });
+    tweetIndex++;
 }
 
-/* Videos más grandes */
-.videos img {
-    width: 400px;
-    height: auto;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px white;
-}
-
-/* Botón */
-button {
-    background-color: red;
-    color: white;
-    font-size: 1.5rem;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    margin: 20px 0;
-}
-
-/* Links */
-.links {
-    margin-top: 20px;
-}
-
-.links a {
-    display: block;
-    margin: 10px;
-    font-size: 1.5rem;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-}
-
-.youtube {
-    background-color: purple;
-    color: white;
-}
-
-.twitter {
-    background-color: cyan;
-    color: black;
-}
-
-.anilist {
-    background-color: purple;
-    color: white;
-}
-
-/* Imágenes flotantes */
-.floating-image {
-    position: fixed;
-    width: 180px;
-}
-
-.right {
-    top: 20px;
-    right: 20px;
-}
-
-.bottom-left {
-    bottom: 20px;
-    left: 20px;
-}
-
-/* GIF fijo en la parte superior */
-.fixed-gif {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: auto;
-    z-index: 1000;
-}
-
-/* Twitter widget (ventana) */
-.twitter-widget {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 320px;
-    height: 400px;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    overflow: hidden;
-    animation: tweetSlide 5s infinite;
-}
-
-.tweet-slider {
-    display: flex;
-    flex-direction: column;
-}
-
-.tweet {
-    background-color: #1d1f1f;
-    color: white;
-    padding: 15px;
-    margin: 5px;
-    border-radius: 8px;
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-@keyframes tweetSlide {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    40% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Estilo para fondo de GIFs */
-.background-gifs {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    justify-content: center;
-    align-content: center;
-    padding: 20px;
-    pointer-events: none;
-}
-
-.background-gifs img {
-    width: 180px;
-    height: auto;
-    opacity: 0.7;
-    object-fit: cover;
-}
+setInterval(changeTweet, 5000);  // Cambiar cada 5 segundos
+changeTweet();  // Llamar para que aparezcan los tweets inicialmente
