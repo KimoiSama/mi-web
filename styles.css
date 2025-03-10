@@ -122,3 +122,13 @@ button {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+
+/* GIF flotante en la esquina inferior izquierda */
+.floating-gif {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 100px; /* Ajusta el tamaño del GIF según lo necesites */
+    height: auto;
+    z-index: 10;
+}
