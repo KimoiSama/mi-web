@@ -1,15 +1,15 @@
-// script.js
+// Sistema de contador
 let count = localStorage.getItem('animePowerCount') || 0;
 const button = document.getElementById("animePower");
 const countDisplay = document.getElementById("clickCount");
 countDisplay.textContent = count;
 
+// Efecto de partículas
 button.addEventListener("click", (e) => {
     count++;
     countDisplay.textContent = count;
     localStorage.setItem('animePowerCount', count);
     
-    // Efecto de partículas mejorado
     const particles = 8;
     for(let i = 0; i < particles; i++) {
         const particle = document.createElement('div');
@@ -29,7 +29,7 @@ button.addEventListener("click", (e) => {
     }
 });
 
-// Animación CSS
+// Animación de partículas
 const style = document.createElement('style');
 style.textContent = `
     @keyframes particleAnim {
@@ -38,6 +38,26 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Widget de Twitter
+const twitterWidget = document.querySelector('.twitter-widget');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100 && currentScroll > lastScroll) {
+        twitterWidget.classList.add('visible');
+    } else if (currentScroll < 50) {
+        twitterWidget.classList.remove('visible');
+    }
+    lastScroll = currentScroll;
+});
+
+// Inicializar transición después de carga
+setTimeout(() => {
+    twitterWidget.style.transition = 'right 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+}, 1000);
 
 // Inicializar Twitter
 window.twttr = (function(d, s, id) {
