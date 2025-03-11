@@ -39,21 +39,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Control del Widget de Twitter
-const twitterWidget = document.querySelector('.twitter-widget');
-let widgetVisible = false;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    
-    if (currentScroll > 200 && !widgetVisible) {
-        twitterWidget.classList.add('visible');
-        widgetVisible = true;
-    } else if (currentScroll <= 200 && widgetVisible) {
-        twitterWidget.classList.remove('visible');
-        widgetVisible = false;
-    }
-});
 
 // Inicializar Twitter
 window.twttr = (function(d, s, id) {
@@ -66,3 +51,16 @@ window.twttr = (function(d, s, id) {
     fjs.parentNode.insertBefore(js, fjs);
     return t;
 }(document, "script", "twitter-wjs"));
+// Eliminar el código relacionado con el scroll del widget
+// Mantener solo la inicialización de Twitter
+window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    return t;
+}(document, "script", "twitter-wjs"));
+
