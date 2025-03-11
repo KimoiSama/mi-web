@@ -40,7 +40,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // JavaScript Actualizado
-const TWITTER_API_KEY = 'blh1UlJRcDEtbjhXVzZCYUlxUnU6MTpjaQ';
+const TWITTER_API_KEY = 'dhxgP61GvL_a_G9YvIMtph5aOh2Fhlv45a0RohfHbWJerJuPvk'
 const TWITTER_USER_ID = 'cobsonp'; // Reemplazar con tu usuario
 
 class TwitterWidget {
