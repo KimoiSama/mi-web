@@ -40,27 +40,4 @@ style.textContent = `
 document.head.appendChild(style);
 
 
-// Inicializar Twitter
-window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    return t;
-}(document, "script", "twitter-wjs"));
-// Eliminar el código relacionado con el scroll del widget
-// Mantener solo la inicialización de Twitter
-window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    return t;
-}(document, "script", "twitter-wjs"));
 
