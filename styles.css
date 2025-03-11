@@ -262,3 +262,55 @@ h2 {
         bottom: 10px;
     }
 }
+/* CSS Actualizado */
+.twitter-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 350px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.tweet {
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    animation: tweetFade 0.5s ease;
+}
+
+.tweet:last-child {
+    border-bottom: none;
+}
+
+.loading {
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes tweetFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustar posición del GIF central */
+.fixed-gif-center {
+    bottom: 400px; /* Ajustar según necesidad */
+}
