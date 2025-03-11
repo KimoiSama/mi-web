@@ -262,34 +262,3 @@ h2 {
         bottom: 10px;
     }
 }
-/* styles.css - Ajuste final de posición */
-.twitter-widget {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 350px;
-    height: 300px;
-    margin: 20px;
-    background: rgba(0, 0, 0, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    backdrop-filter: blur(15px);
-    z-index: 1000;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Ajustar posición de otros elementos */
-.fixed-gif-center {
-    bottom: 340px;
-}
-
-.welcome-character {
-    bottom: 40px;
-}
-
-@media (max-width: 768px) {
-    .twitter-widget {
-        width: 90%;
-        right: 5%;
-    }
-}
