@@ -39,5 +39,81 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// JavaScript Actualizado
+const TWITTER_API_KEY = 'dhxgP61GvL_a_G9YvIMtph5aOh2Fhlv45a0RohfHbWJerJuPvk';
+const TWITTER_USER_ID = 'cobsonp'; // Reemplazar con tu usuario
 
+class TwitterWidget {
+    constructor() {
+        this.container = document.querySelector('.tweet-content');
+        this.tweets = [];
+        this.currentIndex = 0;
+        this.init();
+    }
+
+    async init() {
+        await this.fetchTweets();
+        setInterval(() => this.showNextTweet(), 5000);
+    }
+
+    async fetchTweets() {
+        try {
+            const response = await fetch(
+                `https://api.twitter.com/2/users/by/username/${TWITTER_USER_ID}`, {
+                headers: { Authorization: `Bearer ${TWITTER_API_KEY}` }
+            });
+            
+            const userData = await response.json();
+            const userId = userData.data.id;
+
+            const tweetsResponse = await fetch(
+                `https://api.twitter.com/2/users/${userId}/tweets?max_results=50&exclude=retweets,replies`, {
+                headers: { Authorization: `Bearer ${TWITTER_API_KEY}` }
+            });
+
+            const tweetsData = await tweetsResponse.json();
+            this.tweets = tweetsData.data || [];
+            this.showNextTweet();
+
+        } catch (error) {
+            console.error('Error fetching tweets:', error);
+            this.container.innerHTML = '<div class="error">Error cargando tweets</div>';
+        }
+    }
+
+    showNextTweet() {
+        if (this.tweets.length === 0) return;
+
+        this.currentIndex = Math.floor(Math.random() * this.tweets.length);
+        const tweet = this.tweets[this.currentIndex];
+        
+        this.container.innerHTML = `
+            <div class="tweet">
+                <div class="tweet-text">${this.formatTweetText(tweet.text)}</div>
+                <div class="tweet-time">${this.formatDate(tweet.created_at)}</div>
+            </div>
+        `;
+    }
+
+    formatTweetText(text) {
+        return text
+            .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')
+            .replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>')
+            .replace(/#(\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">#$1</a>');
+    }
+
+    formatDate(isoDate) {
+        const date = new Date(isoDate);
+        return date.toLocaleDateString('es-ES', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        });
+    }
+}
+
+// Inicializar widget
+new TwitterWidget();
+
+// Mantener el resto del código existente...
 
