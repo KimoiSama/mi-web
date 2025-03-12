@@ -16,45 +16,32 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo animado mejorado */
+/* Fondo animado */
 .background-gifs {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 200vh; /* Doble altura para efecto continuo */
+    height: 100vh;
     z-index: -1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
     opacity: 0.15;
     pointer-events: none;
     filter: grayscale(25%);
-    animation: backgroundScroll 60s linear infinite;
 }
 
 .background-gifs img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    animation: backgroundFloat 30s linear infinite;
 }
 
-@keyframes backgroundScroll {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-}
-
-/* Asegurar continuidad */
-.background-gifs::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    background-position: bottom;
+@keyframes backgroundFloat {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 /* Header */
 header {
