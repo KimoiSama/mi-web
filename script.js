@@ -38,4 +38,55 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.querySelector('.custom-cursor');
+    
+    // Actualizar posición
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
 
+    // Efectos de interacción
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+
+    // Efectos al hacer clic
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+
+    // Optimización de rendimiento
+    let lastX = 0, lastY = 0;
+    let animationFrame;
+
+    const smoothMove = (e) => {
+        const deltaX = e.clientX - lastX;
+        const deltaY = e.clientY - lastY;
+        
+        lastX += deltaX * 0.15;
+        lastY += deltaY * 0.15;
+        
+        cursor.style.left = `${lastX}px`;
+        cursor.style.top = `${lastY}px`;
+        
+        animationFrame = requestAnimationFrame(() => smoothMove(e));
+    };
+
+    document.addEventListener('mousemove', (e) => {
+        cancelAnimationFrame(animationFrame);
+        lastX = e.clientX;
+        lastY = e.clientY;
+        smoothMove(e);
+    });
+});
