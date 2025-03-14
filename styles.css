@@ -261,3 +261,33 @@ h2 {
         bottom: 10px;
     }
 }
+/* CSS */
+.custom-cursor {
+    position: fixed;
+    width: 64px;  /* Tamaño del GIF */
+    height: 64px;
+    background: url('https://i.postimg.cc/4yGW9RSp/ezgif-80b6125e826cec.gif') center/cover;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body {
+    cursor: none !important;
+}
+
+body:hover .custom-cursor {
+    opacity: 1;
+}
+
+/* Deshabilitar en dispositivos táctiles */
+@media (pointer: coarse) {
+    .custom-cursor {
+        display: none;
+    }
+    body {
+        cursor: default !important;
+    }
+}
